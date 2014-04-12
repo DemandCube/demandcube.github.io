@@ -1,7 +1,28 @@
 {
   "repos": {
+    "FlumeBeat": ["Java"],
+    "HelloYarn": ["Java"],
+    "Scribengin": ["Java"],
     "NeverwinterDP": ["Java"],
-    "Sparkngin": ["c", "Java"]
+    "Sparkngin": ["C", "Java"],
+    "QA-NeverwinterDP": ["Python"],
+    "Sparkngin-developer-setup": ["Documentation"],
+    "ansible-flow": ["Ansible"],
+    "DeveloperPlayBooks": ["Ansible"],
+    "DemandSpike": ["Other"],
+    "github-flow": ["Other"],
+    "KafkaSphere": ["Other"],
+    "spreadsheet_problem": ["Other"],
+    "hadoop-datanode-rebalancer": ["Other"],
+    "vagrant-flow": ["Vagrant"],
+    "hdp2-ansible": ["Vagrant"],
+    "vagrant-ubuntu": ["Vagrant"],
+    "vagrant-centos": ["Vagrant"],
+    "developer-setup": ["Vagrant"],
+    "Storm-developer-setup": ["Vagrant"],
+    "vagrant-centos-template": ["Vagrant"],
+    "Jenkins-developer-setup": ["Vagrant"],
+    "kafka-rpm": ["RPM spec"]
   },
   "custom": [
     {
