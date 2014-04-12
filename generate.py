@@ -10,7 +10,7 @@ import time
 import netrc
 from pygithub3 import Github
 
-index_data = 'data.json'
+site_info = 'site-info.json'
 repos_in = 'repos.json'
 index_in = 'index.mustache'
 index_out = 'index.html'
@@ -44,9 +44,12 @@ with codecs.open(index_in, 'r', 'utf-8') as f:
   template = pystache.parse(f.read())
 with codecs.open(repos_in, 'r', 'utf-8') as f:
   repo_config = json.loads(f.read())
+with codecs.open(site_info, 'r', 'utf-8') as f:
+  site_info_config = json.loads(f.read())
 
 repos = repo_config['repos']
 custom = repo_config['custom']
+site = site_info_config['site']
 
 # Multimap of categories to their repos.
 categories = defaultdict(list)
@@ -68,9 +71,9 @@ for repo_data in custom:
   for repo_cat in repo_cats:
     categories[repo_cat].append(repo_data)
 
-
 # Template context that will be used for rendering.
 context = {
+  'site': [],
   'categories': []
 }
 
@@ -102,6 +105,8 @@ for category_name in sorted(categories.keys(), key=lambda s: s.lower() if s is n
       data['has_repos_without_images'] = True
 
   context['categories'].append(data)
+
+context['site'].append(site)
 
 # Render the page HTML using MOOOUUSSTTAACCCCHHEEEEE!
 renderer = pystache.Renderer()
