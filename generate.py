@@ -10,6 +10,7 @@ import time
 import netrc
 from pygithub3 import Github
 
+index_data = 'data.json'
 repos_in = 'repos.json'
 index_in = 'index.mustache'
 index_out = 'index.html'
@@ -31,7 +32,7 @@ def gh_repo(name):
   if not logged_in:
     time.sleep(2.0) # Take a nap so GitHub doesn't aggressively throttle us.
 
-  repo = ghclient.repos.get(user='square', repo=name)
+  repo = ghclient.repos.get(user='DemandCube', repo=name)
   return dict(
     name=repo.name,
     homepage=repo.homepage,
