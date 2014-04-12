@@ -1,17 +1,21 @@
-Square Open Source Portal
+DemandCube Open Source Portal
 =========================
 
-A simple, static portal which outlines our open source offerings. Intentionally
-themed to look like a merchant page on the directory.
+A simple, static portal which outlines our open source offerings. 
 
 
 Development
 -----------
 
 Due to the use of absolute URLs in CSS files that are (essentially) out of our
-control, the easiest way to develop is by running with Jekyll.
+control, the easiest way to develop is by running with [Jekyll](http://jekyllrb.com/)
+or python to local run a webserver.
 
-    jekyll serve
+    jekyll serve # port 4000
+
+or
+
+    python -m SimpleHTTPServer 8000
 
 Repositories are listed in the `repos.json` file as a map of repository names
 to a list of their categories. Invoking the `generate.py` script will update
@@ -31,3 +35,11 @@ Images are loaded by convention from the `repo_images/` directory. Ensure the
 name is the same as the repo name in the `repos.json` file and has a `.jpg`
 extension. Currently all images are rotated 10 degrees counter-clockwise to
 break up the overwhelming horizontal and vertical visual lines on the page.
+
+Development Setup
+-----------------
+```
+sudo pip install pystache requests pygithub3
+
+gem install jekyll  # Had error installing on mac
+```
